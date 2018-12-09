@@ -8,6 +8,10 @@ https://visualstudio.microsoft.com/ru/thank-you-downloading-visual-studio/?sku=C
 
 ![1](Images/1.png)
 
+## Создание учетной записи Microsoft
+
+https://signup.live.com/
+
 ## Создание первого приложения
 
 1. Запускаем Microsoft Visual Studio
