@@ -51,11 +51,11 @@ http://dl.adbdriver.com/upload/adbdriver.zip
 
 2. Обозреватель решений -> Правай кнопка выше по Android проекту -> Архивация
 
-![7](Images/6.png)
-
-![8](Images/7.png)
+![7](Images/7.png)
 
 3. Открываем папку -> Копируем файл с расширением .apk на телефон и устанавливаем
+
+![8](Images/8.png)
 
 ## Xamarin.Forms
 
