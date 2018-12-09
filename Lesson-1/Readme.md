@@ -27,9 +27,9 @@ https://signup.live.com/
 
 Подробнее по ссылкам:
 
-https://docs.microsoft.com/en-us/xamarin/xamarin-forms/get-started/first-app/?pivots=windows
+https://docs.microsoft.com/ru-ru/xamarin/xamarin-forms/get-started/first-app/?pivots=windows
 
-https://docs.microsoft.com/en-us/xamarin/xamarin-forms/get-started/hello-xamarin-forms/quickstart?pivots=windows
+https://docs.microsoft.com/ru-ru/xamarin/xamarin-forms/get-started/hello-xamarin-forms/quickstart?pivots=windows
 
 ## Сборка и запуск приложения
 
