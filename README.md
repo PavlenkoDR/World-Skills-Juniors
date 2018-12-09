@@ -1,2 +1,1 @@
-# World-Skills-Juniors
-Xamarin.Forms
+# Уроки Xamarin.Forms
