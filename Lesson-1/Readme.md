@@ -63,7 +63,7 @@ http://dl.adbdriver.com/upload/adbdriver.zip
 
 ## Xamarin.Forms
 
-https://docs.microsoft.com/en-us/xamarin/xamarin-forms/
+https://docs.microsoft.com/ru-ru/xamarin/xamarin-forms/
 
 * Виды страниц
 
