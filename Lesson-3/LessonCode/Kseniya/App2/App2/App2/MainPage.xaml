@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App2"
+             x:Class="App2.MainPage"
+             Title="App">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout BackgroundColor="Yellow"  VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                <Label Text="POP" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Large"></Label>
+            </StackLayout>
+            <StackLayout BackgroundColor="Yellow" x:Name="Box1"  VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+                <Button Text="Plum" VerticalOptions="Center" HorizontalOptions="Center" Clicked="Button_Clicked"></Button>
+                <!-- Place new controls here -->
+                <Label Text="Welcome to Xamarin.Forms!" 
+               HorizontalOptions="Center"
+               VerticalOptions="Center" x:Name="Label1" />
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+    
+
+    
+
+</ContentPage>
