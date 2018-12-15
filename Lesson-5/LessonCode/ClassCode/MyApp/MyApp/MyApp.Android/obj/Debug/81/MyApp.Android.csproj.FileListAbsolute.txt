@@ -1,0 +1,1 @@
+C:\Users\KAVO\source\repos\MyApp\MyApp\MyApp\bin\Debug\netstandard2.0\MyApp.dll
