@@ -4,7 +4,12 @@
 
 https://www.youtube.com/playlist?list=PLH3y3SWteZd35qQ-d7qkBsj45JjQs1o6h
 
-## Xamarin.Forms
+
+## Про C#
+
+https://docs.microsoft.com/ru-ru/dotnet/csharp/tour-of-csharp/
+
+## Про Xamarin.Forms
 
 https://docs.microsoft.com/ru-ru/xamarin/xamarin-forms/
 
