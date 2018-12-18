@@ -19,10 +19,17 @@ namespace MyApp
 		InitializeComponent ();
 		}
 
-        void auth (string login, string password)
+        // auth - название функции, которую мы будем вызывать
+        // void - говорит о том, что функция ничего не возвращает
+        // Принимает в себя два стринга
+        void auth ( string login, string password )
         {
-            if(login == "admin" && password == "admin")
+            // Если логин и пароль нужные, то выполнится первая часть кода
+            // Если нет, то та, которая идет после else
+            // && - логическое или
+            if ( login == "admin" && password == "admin" )
             {
+                // autt указан в Label в поле x:Name. Этот Label инициализирован в файле View3.xaml
                 autt.Text = "It's alright!!!";
             }
             else
