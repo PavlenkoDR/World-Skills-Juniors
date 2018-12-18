@@ -17,6 +17,7 @@ namespace MyApp
 			InitializeComponent ();
             foo();
 		}
+
         async void foo()
         {
             int n = 100;
