@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "947046932110",
+    "firebase_url": "https://worldskills-f19d1.firebaseio.com",
+    "project_id": "worldskills-f19d1",
+    "storage_bucket": "worldskills-f19d1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:947046932110:android:5b85357212bead0b",
+        "android_client_info": {
+          "package_name": "com.companyname.MyApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "947046932110-bf29a53n9kra1qupmiqad04i4nk9b5c8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7rJrZp7Z6QFADkS7KmsOV2haOGpu9NfY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
