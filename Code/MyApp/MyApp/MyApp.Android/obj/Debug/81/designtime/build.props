@@ -1,5 +1,5 @@
-BundleAssemblies=False
-AotAssemblies=False
+BundleAssemblies=false
+AotAssemblies=false
 AndroidAotMode=
 ExplicitCrunch=False
 EnableProguard=
@@ -12,7 +12,7 @@ AndroidSdkPath=
 AndroidNdkPath=
 JavaSdkPath=
 AndroidSequencePointsMode=None
-XamarinAndroidVersion=9.1.0-38
+XamarinAndroidVersion=9.1.4-2
 MonoSymbolArchive=False
 AndroidUseLatestPlatformSdk=false
 TargetFrameworkVersion=v8.1
