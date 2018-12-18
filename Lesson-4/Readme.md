@@ -1,4 +1,8 @@
-# Урок 7 - Авторизация в FireBase
+# Урок 4 - Фальшивая авторизация
+
+## Подробнее о C#
+
+https://docs.microsoft.com/ru-ru/dotnet/csharp/tour-of-csharp/
 
 ## Xamarin.Forms
 

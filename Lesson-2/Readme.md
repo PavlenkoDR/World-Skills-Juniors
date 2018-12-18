@@ -1,4 +1,4 @@
-# Урок 2 - Создание меню MasterDetails
+# Урок 2 - ContentPage StackLayout
 
 ## Подробнее о C#
 
