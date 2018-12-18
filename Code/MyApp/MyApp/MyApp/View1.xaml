@@ -2,9 +2,21 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MyApp.View1">
-  <ContentPage.Content>
-      <StackLayout>
-          <Label Text="Hello Xamarin.Forms!" />
-      </StackLayout>
-  </ContentPage.Content>
+    <ContentPage.Content>
+        <ListView x:Name="listView" HasUnevenRows="True"  SelectionMode="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="20">
+                            <Image Source="{Binding icon}"></Image>
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding title}" FontSize="Large" TextColor="Black"></Label>
+                                <Label Text="{Binding description}" FontSize="Medium" TextColor="Gray"></Label>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
 </ContentPage>

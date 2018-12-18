@@ -20,7 +20,7 @@
                 <StackLayout Padding="35, 15, 35, 15">
                     
                     <Button Text="Buuu" Clicked="Button_Clicked"></Button>
-                    <Button Text="asas"></Button>
+                    <Button Text="asas" Clicked="Button_Clicked_2"></Button>
                     <Button Text="cxxcv"></Button>
                     <Button Text="hello" Clicked="Button_Clicked_1"></Button>
 

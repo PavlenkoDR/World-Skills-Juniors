@@ -25,5 +25,10 @@ namespace MyApp
             Detail = new NavigationPage(new View3());
             IsPresented = false;
         }
+
+        private void Button_Clicked_2(object sender, EventArgs e)
+        {
+            Detail = new NavigationPage(new View1());
+        }
     }
 }
