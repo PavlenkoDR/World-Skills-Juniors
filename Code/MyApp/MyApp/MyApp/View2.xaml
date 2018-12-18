@@ -2,12 +2,19 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MyApp.View2">
+    <!-- ContentPage - одина из самых простых страниц
+    В ContentPage.Content Кладется макет -->
     <ContentPage.Content>
+        <!-- StackLayout - один из видов макетов. Например этот складывает все объекты в ряд
+        HorizontalOptions - указывает на то, что объекты внутри макета будут по центу слева направо
+        VerticalOptions   - указывает на то, что объекты внутри макета будут по центу сверху вниз  -->
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#00ff00" >
+            <!-- Кнопка. Button_Clicked - функция, которая будет вызываться при клике
+            на кнопку. Ее реализация создалась в файле View2.xaml.cs -->
             <Button Clicked="Button_Clicked"></Button>
+            <!-- Просто текст, который отображается на странице.
+            С помощью x:Name мы управляем лейблом из файла View2.xaml.cs -->
             <Label Text="xdtjssjmcytxmtx"  HorizontalOptions="Center" VerticalOptions="StartAndExpand" x:Name="label1"/>
         </StackLayout>
     </ContentPage.Content>
-    
-
 </ContentPage>
