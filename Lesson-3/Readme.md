@@ -1,4 +1,13 @@
-# Урок 3 - Создание меню MasterDetails
+# Урок 3 - Создание меню MasterDetailPage
+
+## MasterDetailPage
+
+Страница MasterDetailPage содержит в себе две части: Master и Detail.
+
+* Master - это выдвигающееся меню
+* Detail - отображаемая страница с контентом
+
+<img src="https://docs.microsoft.com/ru-ru/xamarin/xamarin-forms/user-interface/controls/pages-images/MasterDetailPage-Large.png#lightbox" width="800">
 
 ## Frontend
 
