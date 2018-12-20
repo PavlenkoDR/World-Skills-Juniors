@@ -13,6 +13,13 @@
     <ManifestDocument>obj\Debug\81\lp\19\jl\AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj\Debug\81\lp\20\jl\AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj\Debug\81\lp\21\jl\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Debug\81\lp\22\jl\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Debug\81\lp\23\jl\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Debug\81\lp\28\jl\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Debug\81\lp\29\jl\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Debug\81\lp\30\jl\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Debug\81\lp\31\jl\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Debug\81\lp\32\jl\AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj\Debug\81\lp\5\jl\AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj\Debug\81\lp\6\jl\AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj\Debug\81\lp\8\jl\AndroidManifest.xml</ManifestDocument>
@@ -33,7 +40,14 @@
     <Jar>obj\Debug\81\lp\19\jl\bin\classes.jar</Jar>
     <Jar>obj\Debug\81\lp\20\jl\bin\classes.jar</Jar>
     <Jar>obj\Debug\81\lp\21\jl\bin\classes.jar</Jar>
+    <Jar>obj\Debug\81\lp\22\jl\classes.jar</Jar>
+    <Jar>obj\Debug\81\lp\23\jl\classes.jar</Jar>
+    <Jar>obj\Debug\81\lp\28\jl\classes.jar</Jar>
+    <Jar>obj\Debug\81\lp\29\jl\classes.jar</Jar>
     <Jar>obj\Debug\81\lp\3\jl\arch-core-common.jar</Jar>
+    <Jar>obj\Debug\81\lp\30\jl\classes.jar</Jar>
+    <Jar>obj\Debug\81\lp\31\jl\classes.jar</Jar>
+    <Jar>obj\Debug\81\lp\32\jl\classes.jar</Jar>
     <Jar>obj\Debug\81\lp\4\jl\arch-lifecycle-common.jar</Jar>
     <Jar>obj\Debug\81\lp\5\jl\bin\classes.jar</Jar>
     <Jar>obj\Debug\81\lp\6\jl\bin\classes.jar</Jar>

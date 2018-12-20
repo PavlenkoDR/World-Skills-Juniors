@@ -41,5 +41,11 @@ namespace MyApp
             Detail = new NavigationPage(new View1());
             IsPresented = false;
         }
+
+        private void Button_Clicked_3(object sender, EventArgs e)
+        {
+            Detail = new NavigationPage(new Page4());
+            IsPresented = false;
+        }
     }
 }

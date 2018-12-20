@@ -19,7 +19,7 @@
             в папке Views в файле MainPage.xaml -->
             <x:Arguments>
                 <!-- Page3 - отображаемая страница -->
-                <local:Page3/>
+                <local:Page4/>
             </x:Arguments>
         </NavigationPage>
     </MasterDetailPage.Detail>
@@ -35,10 +35,10 @@
                 <StackLayout Padding="35, 15, 35, 15">
                     <!-- Очевидно кнопки. Button_Clicked - функция, которая будет вызываться при клике
                     на кнопку. Ее реализация создалась в файле MainPage.xaml.cs -->
-                    <Button Text="Buuu" Clicked="Button_Clicked"></Button>
-                    <Button Text="asas" Clicked="Button_Clicked_2"></Button>
-                    <Button Text="cxxcv"></Button>
-                    <Button Text="hello" Clicked="Button_Clicked_1"></Button>
+                    <Button Text="Профиль" Clicked="Button_Clicked"></Button>
+                    <Button Text="Новости" Clicked="Button_Clicked_2"></Button>
+                    <Button Text="Регистрация" Clicked="Button_Clicked_3"></Button>
+                    <Button Text="Авторизация" Clicked="Button_Clicked_1"></Button>
                 </StackLayout>
             </ContentPage.Content>
         </ContentPage>

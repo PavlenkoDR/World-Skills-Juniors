@@ -354,6 +354,40 @@
           "build/MonoAndroid80/Xamarin.Firebase.Common.targets": {}
         }
       },
+      "Xamarin.Firebase.Database/60.1142.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Firebase.Common": "[60.1142.1]",
+          "Xamarin.Firebase.Database.Connection": "[60.1142.1]",
+          "Xamarin.GooglePlayServices.Basement": "[60.1142.1]",
+          "Xamarin.GooglePlayServices.Tasks": "[60.1142.1]"
+        },
+        "compile": {
+          "lib/MonoAndroid80/Xamarin.Firebase.Database.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid80/Xamarin.Firebase.Database.dll": {}
+        },
+        "build": {
+          "build/MonoAndroid80/Xamarin.Firebase.Database.targets": {}
+        }
+      },
+      "Xamarin.Firebase.Database.Connection/60.1142.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Firebase.Common": "[60.1142.1]",
+          "Xamarin.GooglePlayServices.Basement": "[60.1142.1]"
+        },
+        "compile": {
+          "lib/MonoAndroid80/Xamarin.Firebase.Database.Connection.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid80/Xamarin.Firebase.Database.Connection.dll": {}
+        },
+        "build": {
+          "build/MonoAndroid80/Xamarin.Firebase.Database.Connection.targets": {}
+        }
+      },
       "Xamarin.Forms/3.3.0.967583": {
         "type": "package",
         "dependencies": {
@@ -767,6 +801,32 @@
         "xamarin.firebase.common.nuspec"
       ]
     },
+    "Xamarin.Firebase.Database/60.1142.1": {
+      "sha512": "ENgZ1byAHY8LgI8IH7n0J1K8a1fPESKjifVw5A/+pSYMLPPMsbM7TSWkv0vwhP5iMgRowlcmOeHKzik4XAi05A==",
+      "type": "package",
+      "path": "xamarin.firebase.database/60.1142.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/MonoAndroid80/Xamarin.Firebase.Database.targets",
+        "lib/MonoAndroid80/Xamarin.Firebase.Database.dll",
+        "xamarin.firebase.database.60.1142.1.nupkg.sha512",
+        "xamarin.firebase.database.nuspec"
+      ]
+    },
+    "Xamarin.Firebase.Database.Connection/60.1142.1": {
+      "sha512": "wo6P7jrITsXTaAKTyYQ0+mtD77uTeXBN/4T7N2LtCvaFMUJ+luGm5lvZQ0Vr87AKR96J6q/o+kdFanVjVcQJ8w==",
+      "type": "package",
+      "path": "xamarin.firebase.database.connection/60.1142.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/MonoAndroid80/Xamarin.Firebase.Database.Connection.targets",
+        "lib/MonoAndroid80/Xamarin.Firebase.Database.Connection.dll",
+        "xamarin.firebase.database.connection.60.1142.1.nupkg.sha512",
+        "xamarin.firebase.database.connection.nuspec"
+      ]
+    },
     "Xamarin.Forms/3.3.0.967583": {
       "sha512": "aebAEUHkER6WRo4WpsDd8jq4EudSl3WS4n7Pxcq8ea+x9fHi9PstCU0dU2D5PGvSeKa3yEFSpRljOEjI7qtsNA==",
       "type": "package",
@@ -970,6 +1030,8 @@
       "Xamarin.Android.Support.v7.CardView >= 27.0.2.1",
       "Xamarin.Android.Support.v7.MediaRouter >= 27.0.2.1",
       "Xamarin.Firebase.Auth >= 60.1142.1",
+      "Xamarin.Firebase.Database >= 60.1142.1",
+      "Xamarin.Firebase.Database.Connection >= 60.1142.1",
       "Xamarin.Forms >= 3.3.0.967583",
       "Xamarin.GooglePlayServices.Base >= 60.1142.1"
     ]
@@ -1032,6 +1094,14 @@
             "version": "[27.0.2.1, )"
           },
           "Xamarin.Firebase.Auth": {
+            "target": "Package",
+            "version": "[60.1142.1, )"
+          },
+          "Xamarin.Firebase.Database": {
+            "target": "Package",
+            "version": "[60.1142.1, )"
+          },
+          "Xamarin.Firebase.Database.Connection": {
             "target": "Package",
             "version": "[60.1142.1, )"
           },
