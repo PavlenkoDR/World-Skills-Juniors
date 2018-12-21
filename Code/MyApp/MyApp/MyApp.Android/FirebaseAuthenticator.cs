@@ -15,6 +15,14 @@ using Firebase.Database;
 using FirebaseAuthentication;
 using Xamarin.Forms;
 
+/////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+///                 ОЧЕНЬ ВАЖНАЯ СТРОЧКА                      ///
+/////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+///   VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV   ///
 [assembly: Dependency(typeof(MyApp.Droid.FirebaseAuthenticator))]
 namespace MyApp.Droid
 {
@@ -103,28 +111,33 @@ namespace MyApp.Droid
         public string Name { get; set; }
         public string SecondName { get; set; }
 
+        // Реализация функции из интерфейса IFirebaseAuthenticator
         public async Task<string> LoginWithEmailPassword(string email, string password)
         {
-            IAuthResult user;
+            // В этой переменной будет храниться результат авторизации
+            IAuthResult authResult;
             try
             {
-                user = await FirebaseAuth.Instance.
+                authResult = await FirebaseAuth.Instance.
                              SignInWithEmailAndPasswordAsync(email, password);
             }
             catch (Exception)
             {
+                // Тут кидаем свое исключение с самопальным сообщением.
+                // Обрабатываться оно будет в месте где вызывалась функция LoginWithEmailPassword( ... )
                 throw new ArgumentException("SignInWithEmailAndPasswordAsync error");
             }
-            GetTokenResult token;
+            // В этой переменной будет храниться результат получения токена
+            GetTokenResult tokenResult;
             try
             {
-                token = await user.User.GetIdTokenAsync(false);
+                tokenResult = await authResult.User.GetIdTokenAsync(false);
             }
             catch (Exception)
             {
                 throw new ArgumentException("GetIdTokenAsync error");
             }
-            return token.Token;
+            return tokenResult.Token;
         }
 
         public async Task<string> LoginWithEmailAnonymously()
@@ -153,8 +166,7 @@ namespace MyApp.Droid
 
         public async Task<string> RegsiterWithEmailPassword(string email, string password, string name, string secondName)
         {
-            var user = await FirebaseAuth.Instance.
-                                                CreateUserWithEmailAndPasswordAsync(email, password);
+            var user = await FirebaseAuth.Instance.CreateUserWithEmailAndPasswordAsync(email, password);
             var token = await user.User.GetIdTokenAsync(false);
 
             DatabaseReference databaseReference;

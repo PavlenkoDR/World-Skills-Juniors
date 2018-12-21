@@ -1,0 +1,6 @@
+
+*.cache
+Code/MyApp/MyApp/MyApp.Android/obj/Debug/81/MonoAndroid,Version=v8.1.AssemblyAttributes.cs
+Code/MyApp/MyApp/MyApp.Android/obj/Debug/81/designtime/build.props
+*.flag
+*.props

@@ -18,7 +18,6 @@ namespace MyApp
 			InitializeComponent ();
 		}
 
-
         private bool CheckValidatiions()
         {
             if (string.IsNullOrEmpty(entryLogin.Text))

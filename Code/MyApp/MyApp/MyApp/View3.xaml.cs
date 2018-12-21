@@ -37,10 +37,16 @@ namespace MyApp
             }
         }
 
+        // С помощью этой функции проверяем, заполнены ли поля с логином и паролем
         private bool CheckValidatiions()
         {
+            // l - Entry в xaml. Хранит логин
+            // p - Entry в xaml. Хранит пароль
+
+            // IsNullOrEmpty( string ) - если строка пустая, то вернет true, иначе false
             if (string.IsNullOrEmpty(l.Text))
             {
+                // Вывести сообщение с предупреждением
                 DisplayAlert("Alert", "Enter email", "ok");
                 return false;
             }
@@ -57,21 +63,32 @@ namespace MyApp
         // Она привязывается в файле xaml
         private async void Button_Clicked(object sender, EventArgs e)
         {
+            // С помощью CheckValidatiions() проверяем, что нужные поля заполнены
             if (CheckValidatiions())
             {
                 string token;
+                // В области try пытаемся выполнить код, если что-то ломается, то выполняется блок catch
                 try
                 {
+                    // Блок try
+                    // Реализация IFirebaseAuthenticator лежит в файле IFirebaseAuthenticator.cs
+                    // С помощью DependencyService.Get<>() мы цепляем реализацию класса из андроидовской части, условно говоря
+                    // То есть по сути функция LoginWithEmailPassword() будет вызвана из файла FirebaseAuthenticator.cs
                     token = await DependencyService.Get<IFirebaseAuthenticator>().LoginWithEmailPassword(l.Text, p.Text);
                 }
                 catch (ArgumentException exp)
                 {
+                    // Блок catch, в котором мы обрабатываем самостоятельно созданную ошибку
+                    // Она отсылается, наример, в функции LoginWithEmailPassword() и имеет тип ArgumentException
+                    // Message - текст, который мы написали в ошибке
                     token = exp.Message;
                 }
                 catch (Exception)
                 {
+                    // Тут обрабатываем остальные ошибки
                     token = "Another error";
                 }
+                // Отображаем полученный токен
                 autt.Text = token;
                 string result = "";
                 IFirebaseAuthenticator user = null;

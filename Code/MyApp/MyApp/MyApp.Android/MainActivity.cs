@@ -20,7 +20,7 @@ namespace MyApp.Droid
 
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            FirebaseApp.InitializeApp(Application.Context);
+            FirebaseApp.InitializeApp(Application.Context); // Добавляем эту строчку, иначе авторизация не будет работать
             LoadApplication(new App());
         }
     }
