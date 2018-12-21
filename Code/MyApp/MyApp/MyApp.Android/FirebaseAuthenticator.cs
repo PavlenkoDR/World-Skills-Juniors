@@ -169,12 +169,17 @@ namespace MyApp.Droid
             var user = await FirebaseAuth.Instance.CreateUserWithEmailAndPasswordAsync(email, password);
             var token = await user.User.GetIdTokenAsync(false);
 
-            DatabaseReference databaseReference;
+            // Хранит в себе ссылку на базу
             FirebaseDatabase firebaseDatabase;
 
+            // Хранит в себе ссылку на таблицу
+            DatabaseReference databaseReference;
+
+            // Будет использоваться для хранения промежуточных таблиц
             DatabaseReference child;
             try
             {
+                // Получаем нашу базу
                 firebaseDatabase = FirebaseDatabase.GetInstance("https://worldskills-f19d1.firebaseio.com/");
             }
             catch
@@ -183,22 +188,28 @@ namespace MyApp.Droid
             }
             try
             {
+                // Получаем таблицу "worldskills-f19d1"
                 databaseReference = firebaseDatabase.GetReference("worldskills-f19d1");
             }
             catch
             {
                 throw new ArgumentException("GetReference error");
             }
+
+            // Хранит в себе данные о регистрации
             User newUser;
             try
             {
                 newUser = new User();
                 //newUser.Token = token.Token.Replace(".", "tochka");
+
+                //Заполняем нашего нового юзера
                 newUser.Token = email.Replace('@', 'a').Replace('.', 'b');
                 newUser.Email = email;
                 newUser.Name = name;
                 newUser.SecondName = secondName;
 
+                // Получаем таблицу нашего нового юзера
                 child = databaseReference.Child(newUser.Token);
             }
             catch
@@ -207,6 +218,7 @@ namespace MyApp.Droid
             }
             try
             {
+                // Записываем данные в базу
                 await child.Child("Email").SetValueAsync(newUser.Email);
                 await child.Child("Name").SetValueAsync(newUser.Name);
                 await child.Child("SecondName").SetValueAsync(newUser.SecondName);
