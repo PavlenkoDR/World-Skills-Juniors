@@ -74,6 +74,8 @@ namespace MyApp
 
         private void Auth_Clicked(object sender, EventArgs e)
         {
+            // Открываем страницу напрямую. Появится стрелочка назад
+            // И можно будет модно вернуться на страницу
             Navigation.PushAsync(new View3());
         }
 

@@ -5,6 +5,7 @@ namespace FirebaseAuthentication
 {
     public interface IFirebaseAuthenticator
     {
+        // Поля хранят в себе данные после считывания из базы
         string Token { get; set; }
         string Email { get; set; }
         string Name { get; set; }
@@ -19,7 +20,7 @@ namespace FirebaseAuthentication
         // Регистрируемся
         Task<string> RegsiterWithEmailPassword(string email, string password, string name, string secondName);
 
-        // Получаем данные
+        // Получаем данные из базы
         Task<IFirebaseAuthenticator> GetDataFromDataBase(string token);
     }
 }

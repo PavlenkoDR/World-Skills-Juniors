@@ -94,11 +94,14 @@ namespace MyApp
                 IFirebaseAuthenticator user = null;
                 try
                 {
+                    // Получили наш объект с данными
                     user = await DependencyService.Get<IFirebaseAuthenticator>().GetDataFromDataBase(l.Text);
                     result = "Email: < " + user.Email + " >\nName: < " + user.Name + " >\nSecond Name: < " + user.SecondName + " >";
                     // autt указан в Label в поле x:Name. Этот Label инициализирован в файле View3.xaml
                     autt.Text = result;
+                    // Передали объект дальше
                     View2.user = user;
+                    // Вернулись на страницу назад
                     await Navigation.PopAsync();
                 }
                 catch (ArgumentException exp)

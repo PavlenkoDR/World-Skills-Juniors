@@ -46,6 +46,7 @@ namespace MyApp.Droid
         public string SecondName { get; set; }
     }
 
+    // Наследуемся от IValueEventListener и Java.Lang.Object. Это важно
     public class UserValueEventListener : Java.Lang.Object, IValueEventListener
     {
         EventHandler OnChange;
@@ -63,12 +64,19 @@ namespace MyApp.Droid
 
         private User data = null;
 
+        // Реализуем функцию, объявленную в интерфейсе IValueEventListener.
+        // Она будет искать наши данные
         public void OnDataChange(DataSnapshot snapshot)
         {
             try
             {
+                // Получаем всех детей-наследников объекта, на которого вешался слушатель
                 var children = snapshot.Children.ToEnumerable<DataSnapshot>();
+
+                // Временно хранит данные пользователя
                 User ret = new User();
+
+                // Пробегаемся по всем потомкам и забиваем нашу переменную ret
                 foreach (var c in children)
                 {
                     if (c.Key == "Name")
@@ -84,6 +92,7 @@ namespace MyApp.Droid
                         ret.SecondName = c.GetValue(true).ToString();
                     }
                 }
+                // После того, как все считали, кладем наши данные в data
                 data = new User(ret);
             }
             catch
@@ -92,13 +101,21 @@ namespace MyApp.Droid
             }
         }
 
+        // Эта функция ожидает, когда в data что-то появится
         public async Task<User> GetValueAsync()
         {
+            // StartNew(() => { Тут наш код })
+            // Этот код будет исполняться в отдельном потоке
+            // Поэтому приложение не зависнет
             return await Task.Factory.StartNew(() =>  // вложенная задача
             {
+                // Ждем когда в data что-нибудь положат
                 while (data == null) { }
+                // Тырим данные
                 User ret = data;
+                // Обнуляем данные
                 data = null;
+                // Скидываем стыренное
                 return ret;
             });
         }
@@ -106,6 +123,8 @@ namespace MyApp.Droid
 
     public class FirebaseAuthenticator : IFirebaseAuthenticator
     {
+        // Поля, объявленные в интерфейсе.
+        // Будут хранить в себе данные после считывания из базы
         public string Token { get; set; }
         public string Email { get; set; }
         public string Name { get; set; }
@@ -230,8 +249,10 @@ namespace MyApp.Droid
             return newUser.Token;
         }
 
+        // Функция полчения данных из базы
         public async Task<IFirebaseAuthenticator> GetDataFromDataBase(string email)
         {
+            // Проделываем уже знакомые операции
             email = email.Replace('@', 'a').Replace('.', 'b');
 
             DatabaseReference databaseReference;
@@ -255,18 +276,25 @@ namespace MyApp.Droid
                 throw new ArgumentException("GetReference error");
             }
 
+            // Будет временно хранить данные, считанные из базы
             User data;
             Email = "empty";
             try
             {
+                // Создаем объект класса-слушателя, который будет рыскать по базе в поисках данных
                 var listener = new UserValueEventListener();
 
                 child = databaseReference.Child(email);
 
+                // Добавляем нашего рыскателя
                 child.AddListenerForSingleValueEvent(listener);
 
+                // Вызываем функцию, которая ждет, пока слушатель получит данные
                 data = await listener.GetValueAsync();
 
+                // Забиваем полученные данные в класс, из которого вызывался метод
+                // То есть, обратите внимание, мы кладем прям в Name, SecondName и т.д
+                // Которые объявлены в IFirebaseAuthenticator
                 Name = data.Name;
                 SecondName = data.SecondName;
                 Email = data.Email;
@@ -276,6 +304,7 @@ namespace MyApp.Droid
             {
                 throw new ArgumentException("Get data error");
             }
+            // И возвращаем объект класса, из которого вызывалась функция
             return this;
         }
     }
