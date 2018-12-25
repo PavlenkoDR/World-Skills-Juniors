@@ -37,8 +37,9 @@
                     на кнопку. Ее реализация создалась в файле MainPage.xaml.cs -->
                     <Button Text="Профиль" Clicked="Button_Clicked"></Button>
                     <Button Text="Новости" Clicked="Button_Clicked_2"></Button>
-                    <Button Text="Регистрация" Clicked="Button_Clicked_3"></Button>
+                    <Button Text="Регистрация" Clicked="Button_Clicked_4"></Button>
                     <Button Text="Авторизация" Clicked="Button_Clicked_1"></Button>
+                    <Button Text="HttpClient" Clicked="Button_Clicked_3"></Button>
                 </StackLayout>
             </ContentPage.Content>
         </ContentPage>
