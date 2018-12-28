@@ -1,5 +1,7 @@
 # Урок 2 - ContentPage StackLayout
 
+[World-Skills-Juniors](https://pavlenkodr.github.io/World-Skills-Juniors/)
+
 ## Виды страниц наглядно
 
 <img src="https://docs.microsoft.com/ru-ru/xamarin/xamarin-forms/user-interface/controls/pages-images/pages.png#lightbox" width="800">
@@ -81,3 +83,5 @@ namespace MyApp
     }
 }
 ```
+
+[World-Skills-Juniors](https://pavlenkodr.github.io/World-Skills-Juniors/)

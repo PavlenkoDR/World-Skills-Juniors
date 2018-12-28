@@ -1,5 +1,7 @@
 # Урок 7 - Авторизация в FireBase
 
+[World-Skills-Juniors](https://pavlenkodr.github.io/World-Skills-Juniors/)
+
 ## Устанавливаем нужные пакеты
 
 ### Скачиваем пакеты в менеджере NuGet
@@ -12,7 +14,7 @@
 
 ### Настраиваем авторизацию
 
-https://console.firebase.google.com
+[Ссылка на консоль](https://console.firebase.google.com)
 
 ![](Images/4.jpg)
 
@@ -319,3 +321,5 @@ namespace MyApp
 
 Получили токен - значит авторизировались
 Функция регистрации добавляется по аналогии.
+
+[World-Skills-Juniors](https://pavlenkodr.github.io/World-Skills-Juniors/)

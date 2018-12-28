@@ -1,5 +1,7 @@
 # Урок 5 - ListView
 
+[World-Skills-Juniors](https://pavlenkodr.github.io/World-Skills-Juniors/)
+
 ```ListView``` - список, в котором можно хранить кнопки с лейблами, картинки с описанием или другие различные сочетания контента.
 Все задается по единому шаблону. Далее объяснение на примере кода.
 
@@ -77,3 +79,5 @@
 ```
 
 ```List<MenuItem> menuItemArray``` - по сути массив, который хранит в себе ячейки типа MenuItem.
+
+[World-Skills-Juniors](https://pavlenkodr.github.io/World-Skills-Juniors/)

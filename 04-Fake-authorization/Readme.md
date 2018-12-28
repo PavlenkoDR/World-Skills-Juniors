@@ -1,5 +1,7 @@
 # Урок 4 - Фальшивая авторизация
 
+[World-Skills-Juniors](https://pavlenkodr.github.io/World-Skills-Juniors/)
+
 ## Frontend
 
 ```xaml
@@ -48,3 +50,5 @@
             auth(l.Text, p.Text);
         }
 ```
+
+[World-Skills-Juniors](https://pavlenkodr.github.io/World-Skills-Juniors/)

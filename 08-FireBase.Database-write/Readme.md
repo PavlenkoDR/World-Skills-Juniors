@@ -1,5 +1,7 @@
 # Урок 8 - База данных в FireBase, или запись легче считывания
 
+[World-Skills-Juniors](https://pavlenkodr.github.io/World-Skills-Juniors/)
+
 Необходимо установить Xamarin.Firebase.Fatabase. Делается это по аналогии 
 с установкой Xamarin.Firebase.Auth из 7 урока.
 
@@ -60,3 +62,5 @@ public async Task<string> RegsiterWithEmailPassword(string email, string passwor
     return tableName;
 }
 ```
+
+[World-Skills-Juniors](https://pavlenkodr.github.io/World-Skills-Juniors/)

@@ -1,18 +1,18 @@
 # Урок 1 - Знакомство с Xamarin.Forms
 
+[World-Skills-Juniors](https://pavlenkodr.github.io/World-Skills-Juniors/)
+
 ## Установка необходимого ПО
 
 1. Скачать Microsoft Visual Studio 2017
-
-https://visualstudio.microsoft.com/ru/thank-you-downloading-visual-studio/?sku=Community&rel=15
-
+[тут](https://visualstudio.microsoft.com/ru/thank-you-downloading-visual-studio/?sku=Community&rel=15)
 2. Запустить установку и выбрать необходимые пункты
 
 ![1](Images/1.png)
 
 ## Создание учетной записи Microsoft
 
-https://signup.live.com/
+[Sign up](https://signup.live.com/)
 
 ## Создание первого приложения
 
@@ -29,9 +29,8 @@ https://signup.live.com/
 
 Подробнее по ссылкам:
 
-https://docs.microsoft.com/ru-ru/xamarin/xamarin-forms/get-started/first-app/?pivots=windows
-
-https://docs.microsoft.com/ru-ru/xamarin/xamarin-forms/get-started/hello-xamarin-forms/quickstart?pivots=windows
+* [first app](https://docs.microsoft.com/ru-ru/xamarin/xamarin-forms/get-started/first-app/?pivots=windows)
+* [hello xamarin forms](https://docs.microsoft.com/ru-ru/xamarin/xamarin-forms/get-started/hello-xamarin-forms/quickstart?pivots=windows)
 
 ## Сборка и запуск приложения
 
@@ -40,8 +39,7 @@ https://docs.microsoft.com/ru-ru/xamarin/xamarin-forms/get-started/hello-xamarin
 ## Запуск на телефоне (Способ 1)
 
 1. Перевести телефон в режим разработчика. Для каждого телефона индивидуально.
-2. Если телефон не появился в месте указанном на 4 картинке, то необходимо скачать драйвера по ссылке
-http://dl.adbdriver.com/upload/adbdriver.zip
+2. Если телефон не появился в месте указанном на 4 картинке, то необходимо скачать драйвера по [ссылке](http://dl.adbdriver.com/upload/adbdriver.zip)
 3. Распаковать и запустить ADBDriverInstaller.
 4. Выбрать необходимый телефон и нажать Install
 
@@ -168,3 +166,5 @@ int h = point.x + point.y; // Тоже ноль
 point = new Point( 5, 6 ); // x == 5, y == 6
 h = point.x + point.y      // Будет 11
 ```
+
+[World-Skills-Juniors](https://pavlenkodr.github.io/World-Skills-Juniors/)

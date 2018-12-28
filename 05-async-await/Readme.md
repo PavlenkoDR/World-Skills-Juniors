@@ -1,8 +1,10 @@
 # Урок 5 - async await
 
-Очень подробно с 4:35. Но лучше посмотреть сначала
+[World-Skills-Juniors](https://pavlenkodr.github.io/World-Skills-Juniors/)
 
-https://www.youtube.com/watch?v=8NAROILdizw
+Очень подробно в видео с 4:35. Но лучше посмотреть сначала
+
+[Ссылка на видео](https://www.youtube.com/watch?v=8NAROILdizw)
 
 ## Frontend
 
@@ -70,3 +72,5 @@ namespace MyApp
 	}
 }
 ```
+
+[World-Skills-Juniors](https://pavlenkodr.github.io/World-Skills-Juniors/)
