@@ -1,5 +1,7 @@
 # Урок 3 - Создание меню MasterDetailPage
 
+[World-Skills-Juniors](https://pavlenkodr.github.io/World-Skills-Juniors/)
+
 ## MasterDetailPage
 
 Страница MasterDetailPage содержит в себе две части: Master и Detail.
@@ -110,3 +112,5 @@ namespace MyApp
 }
 
 ```
+
+[World-Skills-Juniors](https://pavlenkodr.github.io/World-Skills-Juniors/)

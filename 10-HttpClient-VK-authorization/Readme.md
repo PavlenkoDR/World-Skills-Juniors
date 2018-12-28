@@ -1,5 +1,7 @@
 # Урок 10 - HttpClient - тройной форсаж
 
+[World-Skills-Juniors](https://pavlenkodr.github.io/World-Skills-Juniors/)
+
 Просто в коде палите на Page3.xaml.cs
 
 ## Page3.xaml
@@ -195,3 +197,5 @@ namespace MyApp
     }
 }
 ```
+
+[World-Skills-Juniors](https://pavlenkodr.github.io/World-Skills-Juniors/)
