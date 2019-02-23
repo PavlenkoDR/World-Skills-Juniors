@@ -1,5 +1,7 @@
 # Уроки Xamarin.Forms
 
+[00 - Getting started with Xamarin.Forms](https://pavlenkodr.github.io/World-Skills-Juniors/00-LifeHacks/)
+
 [01 - Getting started with Xamarin.Forms](https://pavlenkodr.github.io/World-Skills-Juniors/01-Getting-started-with-Xamarin.Forms/)
 
 [02 - ContentPage and StackLayout](https://pavlenkodr.github.io/World-Skills-Juniors/02-ContentPage-and-StackLayout/)
@@ -18,9 +20,13 @@
 
 [09 - FireBase.Database read](https://pavlenkodr.github.io/World-Skills-Juniors/09-FireBase.Database-read/)
 
-[10 - HttpClient VK authorization](https://pavlenkodr.github.io/World-Skills-Juniors/10-HttpClient-VK-authorization/)
+[10 - HttpClient VK authorization, Json DeserializeObject](https://pavlenkodr.github.io/World-Skills-Juniors/10-HttpClient-VK-authorization/)
 
-[Code](https://github.com/PavlenkoDR/World-Skills-Juniors/tree/master/Code/MyApp)
+[11 - Custom popup](https://pavlenkodr.github.io/World-Skills-Juniors/11-Custom-Popup/)
+
+[12 - JsonTextReader](https://pavlenkodr.github.io/World-Skills-Juniors/12-JsonTextReader/)
+
+[Code](https://github.com/PavlenkoDR/World-Skills-Juniors/tree/master/Code)
 
 [Видео уроки по Xamarin.Forms](https://www.youtube.com/playlist?list=PLH3y3SWteZd35qQ-d7qkBsj45JjQs1o6h)
 
