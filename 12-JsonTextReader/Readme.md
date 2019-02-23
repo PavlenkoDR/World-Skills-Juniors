@@ -21,17 +21,17 @@ Integer - число
 Пример разбора
 
 ```
-{                       StartObject
-	"dog" = "Sharik",   	PropertyName(dog) = String(Sharik)
-	"catYO" = 5,        	PropertyName(catYO) = Integer(5)
-	"fruits" =          	PropertyName(fruits) = 
-	[                   	StartArray
-		"apple",				String(apple)
-		"banana",				String(banana)
+{                       	StartObject
+	"dog" = "Sharik",   		PropertyName(dog) = String(Sharik)
+	"catYO" = 5,        		PropertyName(catYO) = Integer(5)
+	"fruits" =          		PropertyName(fruits) = 
+	[                   		StartArray
+		"apple",			String(apple)
+		"banana",			String(banana)
 		"pineapple",			String(pineapple)
-		"pear"					String(pear)
-	]						EndArray
-}						EndObject
+		"pear"				String(pear)
+	]				EndArray
+}				EndObject
 ```
 
 ## .xaml
