@@ -41,4 +41,5 @@
 * [Виды страниц](https://docs.microsoft.com/ru-ru/xamarin/xamarin-forms/user-interface/controls/pages)
 * [Макеты](https://docs.microsoft.com/ru-ru/xamarin/xamarin-forms/user-interface/controls/layouts)
 * [Элементы](https://docs.microsoft.com/ru-ru/xamarin/xamarin-forms/user-interface/controls/views)
+* [Json.NET Documentation](https://www.newtonsoft.com/json/help/html/Introduction.htm)
 * [Примеры кода](https://github.com/xamarin/xamarin-forms-samples/tree/master/FormsGallery)
