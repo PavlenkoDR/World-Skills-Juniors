@@ -36,18 +36,6 @@ namespace App3
             //label1.Text += ">>>>>>>>>>>>>>>>>>>>>>>>>\n";
             string str = "";
 
-            while (false && reader.Read())
-            {
-                if (reader.Value != null)
-                {
-                    label1.Text += reader.TokenType + ": " + reader.Value + "\n";
-                }
-                else
-                {
-                    label1.Text += reader.TokenType + "\n";
-                }
-            }
-            //return;
             if (reader.TokenType.ToString() == "None")
             {
                 if (!reader.Read()) return;
@@ -206,7 +194,7 @@ namespace App3
                     label1.Text += "user_id: " + json.user_id + "\n\n";
 
                     // Получаем новостную ленту
-                    HttpResponseMessage response1 = await client.GetAsync("https://api.vk.com/method/newsfeed.get?user_id=" + json.user_id + "&filters=post&count=100&v=5.42&access_token=" + json.access_token);
+                    HttpResponseMessage response1 = await client.GetAsync("https://api.vk.com/method/newsfeed.get?user_id=" + json.user_id + "&filters=post&count=10&v=5.42&access_token=" + json.access_token);
 
                     // Дожидаемся ответа
                     response1.EnsureSuccessStatusCode();
