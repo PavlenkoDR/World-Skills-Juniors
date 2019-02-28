@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App3"
+             x:Class="App3.MainPage">
+    <AbsoluteLayout Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <ScrollView AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Button HorizontalOptions="Center" VerticalOptions="Center" Text="Show Popup" Clicked="Button_Clicked"></Button>
+                <!-- Тут лежат картиночки -->
+                <StackLayout x:Name="imagesStack"></StackLayout>
+                <Label x:Name="label1" TextColor="Black"></Label>
+                <Entry x:Name="wall"></Entry>
+                <Image x:Name="imageNews"></Image>
+            </StackLayout>
+        </ScrollView>
+        <!-- Новомодный попап -->
+        <ContentView BackgroundColor="#C0808080" x:Name="popupLoginView" Padding="10, 0" IsVisible="false" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout Orientation="Vertical" BackgroundColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <StackLayout Orientation="Vertical" BackgroundColor="White">
+                        <Entry  Margin="20,20,20,10" x:Name="login"    Text="" Placeholder="Enter Username                        "></Entry>
+                        <Entry  Margin="20,0,20,0"   x:Name="password" Text="" Placeholder="Enter Password                        " IsPassword="True"></Entry>
+                        <Button Margin="20,0,20,0"   x:Name="auth"     Text="Auth" Clicked="Auth_Clicked"></Button>
+                        <Label></Label>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+        </ContentView>
+    </AbsoluteLayout>
+
+</ContentPage>
