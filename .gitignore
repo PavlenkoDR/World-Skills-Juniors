@@ -5,3 +5,7 @@ Code/MyApp/MyApp/MyApp.Android/obj/Debug/81/designtime/build.props
 *.flag
 *.props
 Code/App3/.vs/
+Code/App3/App3/App3.Android/bin/
+Code/App3/App3/App3.Android/obj/
+Code/App3/App3/App3/bin/
+Code/App3/App3/App3/obj/

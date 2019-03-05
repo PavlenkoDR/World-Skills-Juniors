@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using App3.Data;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -194,7 +195,7 @@ namespace App3
                     label1.Text += "user_id: " + json.user_id + "\n\n";
 
                     // Получаем новостную ленту
-                    HttpResponseMessage response1 = await client.GetAsync("https://api.vk.com/method/newsfeed.get?user_id=" + json.user_id + "&filters=post&count=10&v=5.42&access_token=" + json.access_token);
+                    HttpResponseMessage response1 = await client.GetAsync("https://api.vk.com/method/newsfeed.get?user_id=" + json.user_id + "&filters=post&count=100&v=5.92&access_token=" + json.access_token);
 
                     // Дожидаемся ответа
                     response1.EnsureSuccessStatusCode();
@@ -204,24 +205,30 @@ namespace App3
 
                     //label1.Text += responseAsString + "\n\n";
 
+                    NewsJson kek = JsonConvert.DeserializeObject<NewsJson>(responseAsString);
+
+                    label1.Text += kek.GetJson() + "\n\n";
+
+                    await Navigation.PushAsync(new News(kek));
+
                     // Создаем реадер
-                    JsonTextReader reader = new JsonTextReader(new StringReader(responseAsString));
+                    //JsonTextReader reader = new JsonTextReader(new StringReader(responseAsString));
 
                     // Вызываем нашу функцию, которая вытащит картинки из реадера
-                    GetImagesFromJson(reader);
+                    //GetImagesFromJson(reader);
 
                     // Создаем реадер с теми же данными
-                    JsonTextReader reader2 = new JsonTextReader(new StringReader(responseAsString));
+                    //JsonTextReader reader2 = new JsonTextReader(new StringReader(responseAsString));
 
                     // Тут создается основание дерева
-                    GenericJson kek = new GenericJson();
+                    //GenericJson kek = new GenericJson();
 
                     // Считываем json в наше дерево
-                    await ReadJson(reader2, kek);
+                    //await ReadJson(reader2, kek);
                     //label1.Text += "\n\n";
 
                     // Выводим результат
-                    await PrintParsedJson(kek);
+                    //await PrintParsedJson(kek);
                 }
                 catch (HttpRequestException ex)
                 {
