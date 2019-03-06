@@ -5,12 +5,13 @@
              x:Class="App3.MainPage">
     <AbsoluteLayout Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <ScrollView AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
-            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                <Button HorizontalOptions="Center" VerticalOptions="Center" Text="Show Popup" Clicked="Button_Clicked"></Button>
+            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
+                <Label Text="Vk Говной вонает" TextColor="White" FontSize="36" ></Label>
+                <Button HorizontalOptions="Center" VerticalOptions="Center" Text="Авторизация" Clicked="Button_Clicked"></Button>
                 <!-- Тут лежат картиночки -->
                 <StackLayout x:Name="imagesStack"></StackLayout>
                 <Label x:Name="label1" TextColor="Black"></Label>
-                <Entry x:Name="wall"></Entry>
+                
                 <Image x:Name="imageNews"></Image>
             </StackLayout>
         </ScrollView>

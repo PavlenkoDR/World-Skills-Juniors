@@ -10,8 +10,10 @@ namespace App3
         public App()
         {
             InitializeComponent();
-
-            MainPage = new NavigationPage(new MainPage());
+            
+            MainPage= new NavigationPage(new MainPage());
+            (MainPage as NavigationPage).BarBackgroundColor = Color.FromHex("#030c1c");
+            
         }
 
         protected override void OnStart()

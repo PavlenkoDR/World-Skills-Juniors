@@ -18,7 +18,66 @@ namespace App3
         public MainPage()
         {
             InitializeComponent();
+            string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "User.json");
+            string responseBody = "";
+            if (File.Exists(fileName))
+            {
+                responseBody = File.ReadAllText(fileName);
+                Auth(responseBody);
+            }
+
         }
+        public async void Auth(string responseBody)
+        {
+
+            HttpClient client = new HttpClient();
+            // Вот тут уже JSON в формате строки преобразуем в наш ламповый класс
+            VKJson json = JsonConvert.DeserializeObject<VKJson>(responseBody);
+
+            // Показываем наш модный попап
+            popupLoginView.IsVisible = false;
+
+            label1.Text = "token: " + json.access_token + "\n"; // "\n" - перенос строки
+            label1.Text += "expires_in: " + json.expires_in + "\n";
+            label1.Text += "user_id: " + json.user_id + "\n\n";
+
+            // Получаем новостную ленту
+            HttpResponseMessage response1 = await client.GetAsync("https://api.vk.com/method/newsfeed.get?user_id=" + json.user_id + "&filters=post&count=50&v=5.92&access_token=" + json.access_token);
+
+            // Дожидаемся ответа
+            response1.EnsureSuccessStatusCode();
+
+            // Считываем ответ
+            string responseAsString = await response1.Content.ReadAsStringAsync();
+
+            //label1.Text += responseAsString + "\n\n";
+
+            NewsJson kek = JsonConvert.DeserializeObject<NewsJson>(responseAsString);
+
+            label1.Text += kek.GetJson() + "\n\n";
+
+            await Navigation.PushAsync(new News(kek));
+
+            // Создаем реадер
+            //JsonTextReader reader = new JsonTextReader(new StringReader(responseAsString));
+
+            // Вызываем нашу функцию, которая вытащит картинки из реадера
+            //GetImagesFromJson(reader);
+
+            // Создаем реадер с теми же данными
+            //JsonTextReader reader2 = new JsonTextReader(new StringReader(responseAsString));
+
+            // Тут создается основание дерева
+            //GenericJson kek = new GenericJson();
+
+            // Считываем json в наше дерево
+            //await ReadJson(reader2, kek);
+            //label1.Text += "\n\n";
+
+            // Выводим результат
+            //await PrintParsedJson(kek);
+        }
+
 
         public class VKJson
         {
@@ -33,7 +92,7 @@ namespace App3
             public Object value = null;
         }
 
-        private async Task ReadJson(JsonTextReader reader, GenericJson jenericJson, string deep = "" )
+        private async Task ReadJson(JsonTextReader reader, GenericJson jenericJson, string deep = "")
         {
             //label1.Text += ">>>>>>>>>>>>>>>>>>>>>>>>>\n";
             string str = "";
@@ -120,7 +179,7 @@ namespace App3
                 return;
             if (jenericJson.key != "")
                 label1.Text += deep + "key: \"" + jenericJson.key + "\" ";
-            if ( jenericJson.value.GetType() == typeof(List<GenericJson>) )
+            if (jenericJson.value.GetType() == typeof(List<GenericJson>))
             {
                 if (jenericJson.key == "")
                     label1.Text += deep + "[\n";
@@ -173,6 +232,10 @@ namespace App3
             {
                 try
                 {
+                    string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "User.json");
+                    string responseBody = "";
+
+
                     // Да, такой ебанутый API, но для примера катит
                     string url = "https://oauth.vk.com/token?grant_type=password&client_id=3140623&client_secret=VeWdmVclDCtn6ihuP1nt&username=" + login.Text + "&password=" + password.Text;
 
@@ -183,53 +246,14 @@ namespace App3
                     response.EnsureSuccessStatusCode();
 
                     // Считываем ответ
-                    string responseBody = await response.Content.ReadAsStringAsync();
+                    responseBody = await response.Content.ReadAsStringAsync();
+                    File.WriteAllText(fileName, responseBody);
 
-                    // Вот тут уже JSON в формате строки преобразуем в наш ламповый класс
-                    VKJson json = JsonConvert.DeserializeObject<VKJson>(responseBody);
 
-                    // Показываем наш модный попап
-                    popupLoginView.IsVisible = false;
+                    Auth(responseBody);
 
-                    label1.Text = "token: " + json.access_token + "\n"; // "\n" - перенос строки
-                    label1.Text += "expires_in: " + json.expires_in + "\n";
-                    label1.Text += "user_id: " + json.user_id + "\n\n";
 
-                    // Получаем новостную ленту
-                    HttpResponseMessage response1 = await client.GetAsync("https://api.vk.com/method/newsfeed.get?user_id=" + json.user_id + "&filters=post&count=100&v=5.92&access_token=" + json.access_token);
 
-                    // Дожидаемся ответа
-                    response1.EnsureSuccessStatusCode();
-
-                    // Считываем ответ
-                    string responseAsString = await response1.Content.ReadAsStringAsync();
-
-                    //label1.Text += responseAsString + "\n\n";
-
-                    NewsJson kek = JsonConvert.DeserializeObject<NewsJson>(responseAsString);
-
-                    label1.Text += kek.GetJson() + "\n\n";
-
-                    await Navigation.PushAsync(new News(kek));
-
-                    // Создаем реадер
-                    //JsonTextReader reader = new JsonTextReader(new StringReader(responseAsString));
-
-                    // Вызываем нашу функцию, которая вытащит картинки из реадера
-                    //GetImagesFromJson(reader);
-
-                    // Создаем реадер с теми же данными
-                    //JsonTextReader reader2 = new JsonTextReader(new StringReader(responseAsString));
-
-                    // Тут создается основание дерева
-                    //GenericJson kek = new GenericJson();
-
-                    // Считываем json в наше дерево
-                    //await ReadJson(reader2, kek);
-                    //label1.Text += "\n\n";
-
-                    // Выводим результат
-                    //await PrintParsedJson(kek);
                 }
                 catch (HttpRequestException ex)
                 {

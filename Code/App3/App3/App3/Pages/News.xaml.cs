@@ -37,8 +37,11 @@ namespace App3
                 if (item.type == "post")
                 {
                     Frame frame = new Frame();
+                    frame.CornerRadius = 30;
+                    frame.BackgroundColor = Color.FromHex("#31343a");
                     StackLayout stackLayout = new StackLayout();
                     Label label = new Label();
+                    label.TextColor = Color.White;
                     label.Text = item.text;
                     stackLayout.Children.Add(label);
                     if (item.attachments != null) foreach(var attachment in item.attachments)
