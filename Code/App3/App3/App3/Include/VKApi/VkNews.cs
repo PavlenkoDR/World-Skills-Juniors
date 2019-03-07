@@ -1,13 +1,49 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
-namespace App3.Data
+namespace App3.Include.VKApi
 {
-    public class NewsJson
+    public class VKNews
+    {
+        private VKNewsJson newsJson { get; set; }
+
+        public VKNews(string json)
+        {
+            Deserialize(json);
+        }
+
+        public VKNews()
+        {
+        }
+
+        public string GetJsonFormatted()
+        {
+            return newsJson.ToString();
+        }
+
+        public void Deserialize(string json)
+        {
+            newsJson = JsonConvert.DeserializeObject<VKNewsJson>(json);
+        }
+
+        public string Serialize()
+        {
+            return JsonConvert.SerializeObject(newsJson);
+        }
+
+        public VKNewsJson Get()
+        {
+            return newsJson;
+        }
+    }
+
+    public class VKNewsJson
     {
         public Response response { get; set; }
 
-        public string GetJson()
+        override
+        public string ToString()
         {
             string result = "";
 
@@ -39,37 +75,37 @@ namespace App3.Data
             result += splitSimbols0 + "items:\n";
             result += splitSimbols0 + "[\n";
             if (items != null) foreach (var item in items)
-            {
-                result += splitSimbols1 + "{\n";
-                result += item?.ToString(splitSimbols1, splitSimbols2, splitSimbols3, splitSimbols4);
-                result += splitSimbols1 + "},\n";
-            }
+                {
+                    result += splitSimbols1 + "{\n";
+                    result += item?.ToString(splitSimbols1, splitSimbols2, splitSimbols3, splitSimbols4);
+                    result += splitSimbols1 + "},\n";
+                }
             result += splitSimbols0 + "],\n";
-            
+
             #endregion
             #region profiles
 
             result += splitSimbols0 + "profiles:\n";
             result += splitSimbols0 + "[\n";
             if (profiles != null) foreach (var profile in profiles)
-            {
-                result += splitSimbols1 + "{\n";
-                result += profile?.ToString(splitSimbols1);
-                result += splitSimbols1 + "},\n";
-            }
+                {
+                    result += splitSimbols1 + "{\n";
+                    result += profile?.ToString(splitSimbols1);
+                    result += splitSimbols1 + "},\n";
+                }
             result += splitSimbols0 + "],\n";
-            
+
             #endregion
             #region profiles
 
             result += splitSimbols0 + "groups:\n";
             result += splitSimbols0 + "[\n";
             if (groups != null) foreach (var group in groups)
-            {
-                result += splitSimbols1 + "{\n";
-                result += group?.ToString(splitSimbols1);
-                result += splitSimbols1 + "},\n";
-            }
+                {
+                    result += splitSimbols1 + "{\n";
+                    result += group?.ToString(splitSimbols1);
+                    result += splitSimbols1 + "},\n";
+                }
             result += splitSimbols0 + "],\n";
 
             #endregion
@@ -112,11 +148,11 @@ namespace App3.Data
             result += splitSimbols0 + "attachments:\n";
             result += splitSimbols0 + "[\n";
             if (attachments != null) foreach (var attachment in attachments)
-            {
-                result += splitSimbols1 + "{\n";
-                result += attachment?.ToString(splitSimbols1, splitSimbols2, splitSimbols3);
-                result += splitSimbols1 + "},\n";
-            }
+                {
+                    result += splitSimbols1 + "{\n";
+                    result += attachment?.ToString(splitSimbols1, splitSimbols2, splitSimbols3);
+                    result += splitSimbols1 + "},\n";
+                }
             result += splitSimbols0 + "],\n";
 
             #endregion
@@ -176,7 +212,7 @@ namespace App3.Data
             result += splitSimbols0 + "type: " + type + ",\n";
             result += splitSimbols0 + "photo:\n";
             result += splitSimbols0 + "{\n";
-            result += photo?.ToString( splitSimbols1, splitSimbols2 );
+            result += photo?.ToString(splitSimbols1, splitSimbols2);
             result += splitSimbols0 + "}\n";
             return result;
         }
@@ -204,11 +240,11 @@ namespace App3.Data
             result += splitSimbols0 + "user_id: " + user_id + ",\n";
             result += splitSimbols0 + "[\n";
             if (sizes != null) foreach (var size in sizes)
-            {
-                result += splitSimbols1 + "{\n";
-                result += size?.ToString(splitSimbols1);
-                result += splitSimbols1 + "},\n";
-            }
+                {
+                    result += splitSimbols1 + "{\n";
+                    result += size?.ToString(splitSimbols1);
+                    result += splitSimbols1 + "},\n";
+                }
             result += splitSimbols0 + "],\n";
             result += splitSimbols0 + "date: " + date + ",\n";
             result += splitSimbols0 + "post_id: " + post_id + ",\n";

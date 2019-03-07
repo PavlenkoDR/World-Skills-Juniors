@@ -11,8 +11,7 @@ namespace App3
         {
             InitializeComponent();
             
-            MainPage= new NavigationPage(new MainPage());
-            (MainPage as NavigationPage).BarBackgroundColor = Color.FromHex("#030c1c");
+            MainPage = new MainPage();
             
         }
 

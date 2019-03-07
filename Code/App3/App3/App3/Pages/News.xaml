@@ -5,9 +5,23 @@
              BackgroundColor="#04142d"
              >
     <ContentPage.Content>
-        <ScrollView VerticalOptions="FillAndExpand">
-            <StackLayout x:Name="layout" VerticalOptions="FillAndExpand" Margin="3,0,3,0">
+        <AbsoluteLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <ListView x:Name="listViewLoading" 
+                      IsPullToRefreshEnabled="True" 
+                      AbsoluteLayout.LayoutBounds="0, 0, 1, 1" 
+                      AbsoluteLayout.LayoutFlags="All">
+                <ListView.Header>
+                    <ScrollView VerticalOptions="FillAndExpand" 
+                        AbsoluteLayout.LayoutBounds="0, 0, 1, 1" 
+                        AbsoluteLayout.LayoutFlags="All">
+                        <StackLayout x:Name="WallLayout" VerticalOptions="FillAndExpand" Padding="0,0,0,30">
+                        </StackLayout>
+                    </ScrollView>
+                </ListView.Header>
+            </ListView>
+            <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                <ActivityIndicator x:Name="loading" IsRunning="True" Color="White"></ActivityIndicator>
             </StackLayout>
-        </ScrollView>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

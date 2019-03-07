@@ -1,11 +1,7 @@
-﻿using App3.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using App3.Include.VKApi;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
-
-
+using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -14,10 +10,33 @@ namespace App3
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class News : ContentPage
     {
-        public News(NewsJson newsJson)
+        public News()
         {
             InitializeComponent();
-            foreach (var item in newsJson.response.items)
+            SetWall();
+            listViewLoading.RefreshCommand = new Command(async () => {
+                //Do your stuff.
+                await UpdateWall();
+                listViewLoading.IsRefreshing = false;
+            });
+        }
+
+        private async void SetWall()
+        {
+            await UpdateWall();
+        }
+
+        public class FrameKostyl
+        {
+            public View content { get; set; }
+        }
+
+        private async Task UpdateWall()
+        {
+            await VKSession.LoadNews();
+            var content = new ObservableCollection<FrameKostyl>();
+            StackLayout layout = new StackLayout();
+            foreach (var item in VKSession.news.Get().response.items)
             {
                 /*public string type { get; set; }
                     public int source_id { get; set; }
@@ -37,37 +56,40 @@ namespace App3
                 if (item.type == "post")
                 {
                     Frame frame = new Frame();
-                    frame.CornerRadius = 30;
+                    frame.CornerRadius = 10;
                     frame.BackgroundColor = Color.FromHex("#31343a");
                     StackLayout stackLayout = new StackLayout();
                     Label label = new Label();
                     label.TextColor = Color.White;
                     label.Text = item.text;
                     stackLayout.Children.Add(label);
-                    if (item.attachments != null) foreach(var attachment in item.attachments)
-                    {
-                        if (attachment.type == "photo")
+                    if (item.attachments != null) foreach (var attachment in item.attachments)
                         {
-                            /*
-                                public int id { get; set; }
-                                public int album_id { get; set; }
-                                public int owner_id { get; set; }
-                                public int user_id { get; set; }
-                                public List<Size> sizes { get; set; }
-                                public string text { get; set; }
-                                public int date { get; set; }
-                                public int post_id { get; set; }
-                                public string access_key { get; set; }
-                             */
-                            Image image = new Image();
-                            if (attachment.photo.sizes != null) image.Source = attachment.photo.sizes[attachment.photo.sizes.Count - 1].url;
-                            stackLayout.Children.Add(image);
+                            if (attachment.type == "photo")
+                            {
+                                /*
+                                    public int id { get; set; }
+                                    public int album_id { get; set; }
+                                    public int owner_id { get; set; }
+                                    public int user_id { get; set; }
+                                    public List<Size> sizes { get; set; }
+                                    public string text { get; set; }
+                                    public int date { get; set; }
+                                    public int post_id { get; set; }
+                                    public string access_key { get; set; }
+                                 */
+                                Image image = new Image();
+                                if (attachment.photo.sizes != null) image.Source = attachment.photo.sizes[attachment.photo.sizes.Count - 1].url;
+                                stackLayout.Children.Add(image);
+                            }
                         }
-                    }
                     frame.Content = stackLayout;
                     layout.Children.Add(frame);
                 }
             }
+            WallLayout.Children.Clear();
+            WallLayout.Children.Add(layout);
+            loading.IsRunning = false;
         }
     }
 }
