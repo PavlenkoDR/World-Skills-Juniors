@@ -1,4 +1,5 @@
 ﻿using App3.Include.VKApi;
+using App3.Pages;
 using System;
 using System.IO;
 using System.Net.Http;
@@ -38,9 +39,10 @@ namespace App3
 
         public void OpenNews()
         {
-            var newPage = new NavigationPage(new News());
+            var newPage = new Master();
             Navigation.PushModalAsync(newPage);
-            newPage.BarBackgroundColor = Color.FromHex("#030c1c");
+
+            //newPage.BarBackgroundColor = Color.FromHex("#030c1c");
 
             //Application.Current.MainPage = new NavigationPage(new News());
             //(Application.Current.MainPage as NavigationPage).BarBackgroundColor = Color.FromHex("#030c1c");
