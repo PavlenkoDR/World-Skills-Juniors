@@ -39,14 +39,14 @@ using Xamarin.Forms.Xaml;
 
 namespace MyApp
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Page1 : ContentPage
-	{
-		public Page1 ()
-		{
-			InitializeComponent ();
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class Page1 : ContentPage
+    {
+        public Page1 ()
+        {
+            InitializeComponent ();
             foo(); // Вызываем нашу функцию
-		}
+        }
 
         // Завели асинхронную функцию
         async void foo()
@@ -69,7 +69,7 @@ namespace MyApp
             // MainPage - главная страница
             Application.Current.MainPage = new MainPage();
         }
-	}
+    }
 }
 ```
 

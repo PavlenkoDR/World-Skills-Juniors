@@ -64,14 +64,14 @@ namespace MyApp
 {
     // Публичный класс страницы
     [XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class View2 : ContentPage
+    public partial class View2 : ContentPage
     {
         // Конструктор класса
         public View2 ()
         {
             // Инициализирует компаненты из файла с расширением xaml
             InitializeComponent();
-		}
+        }
 
         // Реализация функции, которая вызывается при нажатии на кнопку
         // Она привязывается в файле xaml

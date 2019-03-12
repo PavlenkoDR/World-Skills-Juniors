@@ -33,11 +33,26 @@ void foo()
 {
 	Image image = new Image();
 	// 4 способа загрузить картинку из интернета
-	image.Source = reader.Value.ToString();
-	//image.Source = new Uri(reader.Value.ToString());
-	//image.Source = ImageSource.FromUri(new Uri(reader.Value.ToString()));
-	//image.Source = new UriImageSource { CachingEnabled = false, Uri = new Uri(reader.Value.ToString()) };
+	image.Source = "image.png";
 	imagesStack.Children.Add(image);
+}
+```
+
+## 3 - Несколько способов задать источник для Image
+
+```xaml
+<Image x:Name="image"></Image>
+```
+
+```cs
+void foo()
+{
+	string url = "https://pp.userapi.com/c845124/v845124849/1b527c/i9y_94keILE.jpg";
+	// 4 способа загрузить картинку из интернета
+	image.Source = url;
+	image.Source = new Uri(url);
+	image.Source = ImageSource.FromUri(new Uri(url));
+	image.Source = new UriImageSource { CachingEnabled = false, Uri = new Uri(url) };
 }
 ```
 

@@ -23,17 +23,17 @@ None - ничего не считано
 Пример разбора
 
 ```
-{                       	StartObject
-	"dog" = "Sharik",   		PropertyName(dog) = String(Sharik)
-	"catYO" = 5,        		PropertyName(catYO) = Integer(5)
-	"fruits" =          		PropertyName(fruits) = 
-	[                   		StartArray
-		"apple",			String(apple)
-		"banana",			String(banana)
-		"pineapple",			String(pineapple)
-		"pear"				String(pear)
-	]				EndArray
-}				EndObject
+{                           StartObject
+    "dog" = "Sharik",           PropertyName(dog) = String(Sharik)
+    "catYO" = 5,                PropertyName(catYO) = Integer(5)
+    "fruits" =                  PropertyName(fruits) = 
+    [                           StartArray
+        "apple",                    String(apple)
+        "banana",                   String(banana)
+        "pineapple",                String(pineapple)
+        "pear"                      String(pear)
+    ]                           EndArray
+}                           EndObject
 ```
 
 ## .xaml
@@ -54,55 +54,55 @@ using Newtonsoft.Json;
 
 private async Task GetImagesFromJson(JsonTextReader reader)
 {
-	while (reader.ReadAsync().Result)
-	{
-		if (reader.Value != null)
-		{
-			// Вывод считанного значения, если значение есть
-			label1.Text += reader.TokenType + ": " + reader.Value + "\n";
-			// Так как для примера рассматривается стена ВК, то мы ищем конкретную строку
-			// Которая начинается на "photo_"
-			if (reader.Value.ToString().Contains("photo_"))
-			{
-				// После чего мы делаем считывание, там будет лежать ссылка на картинку
-				await reader.ReadAsync();
-				Image image = new Image();
-				// 4 способа получить картинку из интернета
-				image.Source = reader.Value.ToString();
-				//image.Source = new Uri(reader.Value.ToString());
-				//image.Source = ImageSource.FromUri(new Uri(reader.Value.ToString()));
-				//image.Source = new UriImageSource { CachingEnabled = false, Uri = new Uri(reader.Value.ToString()) };
-				imagesStack.Children.Add(image);
-			}
-		}
-		else
-		{
-			// Вывод считанного значения, если значения нет
-			label1.Text += reader.TokenType + "\n";
-		}
-	}
+    while (reader.ReadAsync().Result)
+    {
+        if (reader.Value != null)
+        {
+            // Вывод считанного значения, если значение есть
+            label1.Text += reader.TokenType + ": " + reader.Value + "\n";
+            // Так как для примера рассматривается стена ВК, то мы ищем конкретную строку
+            // Которая начинается на "photo_"
+            if (reader.Value.ToString().Contains("photo_"))
+            {
+                // После чего мы делаем считывание, там будет лежать ссылка на картинку
+                await reader.ReadAsync();
+                Image image = new Image();
+                // 4 способа получить картинку из интернета
+                image.Source = reader.Value.ToString();
+                //image.Source = new Uri(reader.Value.ToString());
+                //image.Source = ImageSource.FromUri(new Uri(reader.Value.ToString()));
+                //image.Source = new UriImageSource { CachingEnabled = false, Uri = new Uri(reader.Value.ToString()) };
+                imagesStack.Children.Add(image);
+            }
+        }
+        else
+        {
+            // Вывод считанного значения, если значения нет
+            label1.Text += reader.TokenType + "\n";
+        }
+    }
 }
 
 private async void Button_Clicked(object sender, EventArgs e)
 {// Пример авторизации в vk.com через GET запрос
 
-	using (HttpClient client = new HttpClient())
-	{
-		try
-		{
-			// Создаем реадер
-			// В responseAsString лежит JSON
-			JsonTextReader reader = new JsonTextReader(new StringReader(responseAsString));
+    using (HttpClient client = new HttpClient())
+    {
+        try
+        {
+            // Создаем реадер
+            // В responseAsString лежит JSON
+            JsonTextReader reader = new JsonTextReader(new StringReader(responseAsString));
 
-			// Вызываем нашу функцию, которая вытащит картинки из реадера
-			GetImagesFromJson(reader);
-		}
-		catch (Exception ex)
-		{
-			// Ошиба на случай, если упадет преобразование из JSON в VKJson
-			await DisplayAlert("Иная ошибка!", ex.Message, "OK");
-		}
-	}
+            // Вызываем нашу функцию, которая вытащит картинки из реадера
+            GetImagesFromJson(reader);
+        }
+        catch (Exception ex)
+        {
+            // Ошиба на случай, если упадет преобразование из JSON в VKJson
+            await DisplayAlert("Иная ошибка!", ex.Message, "OK");
+        }
+    }
 }
 ```
 

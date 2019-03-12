@@ -1,16 +1,16 @@
 # Уроки Xamarin.Forms
 
-[00 - Getting started with Xamarin.Forms](https://pavlenkodr.github.io/World-Skills-Juniors/00-LifeHacks/)
+[00 - Полезные приблуды](https://pavlenkodr.github.io/World-Skills-Juniors/00-LifeHacks/)
 
-[01 - Getting started with Xamarin.Forms](https://pavlenkodr.github.io/World-Skills-Juniors/01-Getting-started-with-Xamarin.Forms/)
+[01 - Установка Xamarin и пара слов о C#](https://pavlenkodr.github.io/World-Skills-Juniors/01-Getting-started-with-Xamarin.Forms/)
 
-[02 - ContentPage and StackLayout](https://pavlenkodr.github.io/World-Skills-Juniors/02-ContentPage-and-StackLayout/)
+[02 - ContentPage и StackLayout](https://pavlenkodr.github.io/World-Skills-Juniors/02-ContentPage-and-StackLayout/)
 
 [03 - MasterDetailPage](https://pavlenkodr.github.io/World-Skills-Juniors/03-MasterDetailPage/)
 
-[04 - Fake authorization](https://pavlenkodr.github.io/World-Skills-Juniors/04-Fake-authorization/)
+[04 - Взаимодействие UI на примере фейк авторизации](https://pavlenkodr.github.io/World-Skills-Juniors/04-Fake-authorization/)
 
-[05 - async await](https://pavlenkodr.github.io/World-Skills-Juniors/05-async-await/)
+[05 - async await - плавное появление](https://pavlenkodr.github.io/World-Skills-Juniors/05-async-await/)
 
 [06 - ListView](https://pavlenkodr.github.io/World-Skills-Juniors/06-ListView/)
 
@@ -20,11 +20,11 @@
 
 [09 - FireBase.Database read](https://pavlenkodr.github.io/World-Skills-Juniors/09-FireBase.Database-read/)
 
-[10 - HttpClient VK authorization, Json DeserializeObject](https://pavlenkodr.github.io/World-Skills-Juniors/10-HttpClient-VK-authorization/)
+[10 - HttpClient, Json DeserializeObject, авторизация VK](https://pavlenkodr.github.io/World-Skills-Juniors/10-HttpClient-VK-authorization/)
 
-[11 - Custom popup](https://pavlenkodr.github.io/World-Skills-Juniors/11-Custom-Popup/)
+[11 - Кастовное всплывающее окно](https://pavlenkodr.github.io/World-Skills-Juniors/11-Custom-Popup/)
 
-[12 - JsonTextReader](https://pavlenkodr.github.io/World-Skills-Juniors/12-JsonTextReader/)
+[12 - JsonTextReader - самостоятельный разбор JSON](https://pavlenkodr.github.io/World-Skills-Juniors/12-JsonTextReader/)
 
 [Code](https://github.com/PavlenkoDR/World-Skills-Juniors/tree/master/Code)
 

@@ -54,12 +54,12 @@
 ```FirebaseApp.InitializeApp(Application.Context);```. Файл находится в части проекта, которая связана с Android
 
 ```cs
-	// ...
-	
-	FirebaseApp.InitializeApp(Application.Context); // Добавляем эту строчку, иначе авторизация не будет работать
-	LoadApplication(new App());
-	
-	// ...
+// ...
+
+FirebaseApp.InitializeApp(Application.Context); // Добавляем эту строчку, иначе авторизация не будет работать
+LoadApplication(new App());
+
+// ...
 ```
 
 Создадим интерфейс, в котором будут объявлены наши функции авторизации и регистрации.
@@ -175,7 +175,7 @@ namespace MyApp.Droid
 
         public async Task<string> RegsiterWithEmailPassword(string email, string password, string name, string secondName)
         {
-			// Тут лучше все завернуть в try-catch по примеру выше
+            // Тут лучше все завернуть в try-catch по примеру выше
             var user = await FirebaseAuth.Instance.CreateUserWithEmailAndPasswordAsync(email, password);
             var token = await user.User.GetIdTokenAsync(false);
             return token.Token;
@@ -232,12 +232,12 @@ using Xamarin.Forms.Xaml;
 namespace MyApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class View3 : ContentPage
-	{
-		public View3 ()
-		{
-		    InitializeComponent ();
-		}
+    public partial class View3 : ContentPage
+    {
+        public View3 ()
+        {
+            InitializeComponent ();
+        }
 
         // С помощью этой функции проверяем, заполнены ли поля с логином и паролем
         private bool CheckValidatiions()
