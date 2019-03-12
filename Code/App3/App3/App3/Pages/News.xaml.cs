@@ -1,4 +1,6 @@
 ﻿using App3.Include.VKApi;
+using App3.Pages;
+using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -29,6 +31,11 @@ namespace App3
         public class FrameKostyl
         {
             public View content { get; set; }
+        }
+
+        private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Fullimg((sender as Image).Source));
         }
 
         private async Task UpdateWall()
@@ -78,7 +85,10 @@ namespace App3
                                     public int post_id { get; set; }
                                     public string access_key { get; set; }
                                  */
+                                var tap = new TapGestureRecognizer();
+                                tap.Tapped += TapGestureRecognizer_Tapped;
                                 Image image = new Image();
+                                image.GestureRecognizers.Add(tap);
                                 if (attachment.photo.sizes != null) image.Source = attachment.photo.sizes[attachment.photo.sizes.Count - 1].url;
                                 stackLayout.Children.Add(image);
                             }
