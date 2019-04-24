@@ -1,0 +1,11 @@
+C:\Users\sevab\source\repos\GGProject\GGProject\GGProject\bin\Release\netstandard2.0\GGProject.deps.json
+C:\Users\sevab\source\repos\GGProject\GGProject\GGProject\bin\Release\netstandard2.0\GGProject.dll
+C:\Users\sevab\source\repos\GGProject\GGProject\GGProject\bin\Release\netstandard2.0\GGProject.pdb
+C:\Users\sevab\source\repos\GGProject\GGProject\GGProject\obj\Release\netstandard2.0\App.xaml.g.cs
+C:\Users\sevab\source\repos\GGProject\GGProject\GGProject\obj\Release\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\sevab\source\repos\GGProject\GGProject\GGProject\obj\Release\netstandard2.0\GGProject.csproj.CoreCompileInputs.cache
+C:\Users\sevab\source\repos\GGProject\GGProject\GGProject\obj\Release\netstandard2.0\GGProject.AssemblyInfoInputs.cache
+C:\Users\sevab\source\repos\GGProject\GGProject\GGProject\obj\Release\netstandard2.0\GGProject.AssemblyInfo.cs
+C:\Users\sevab\source\repos\GGProject\GGProject\GGProject\obj\Release\netstandard2.0\XamlC.stamp
+C:\Users\sevab\source\repos\GGProject\GGProject\GGProject\obj\Release\netstandard2.0\GGProject.dll
+C:\Users\sevab\source\repos\GGProject\GGProject\GGProject\obj\Release\netstandard2.0\GGProject.pdb

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:GGProject"
+             x:Class="GGProject.MainPage"
+                  Title = "Kakai-to sran">
+    <MasterDetailPage.Detail>
+        <ContentPage Title = "sdfsfddsf">
+            <ContentPage.Content>
+            <StackLayout>
+                <Label x:Name="CurencyValue"></Label>
+                    <Label x:Name="l2"></Label>
+                    <Label x:Name="l3"></Label>
+                    <Label x:Name="l4"></Label>
+                    <Label x:Name="l5"></Label>
+                    <Label x:Name="l6"></Label>
+                    <Label x:Name="l7"></Label>
+                    <Label x:Name="l8"></Label>
+
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+
+    </MasterDetailPage.Detail>
+    <MasterDetailPage.Master>
+        <ContentPage Title = "Ochen interesniy title">
+            <ContentPage.Content>
+            <StackLayout>
+                <Button Text="НА главную"/>
+
+            </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+</MasterDetailPage>
