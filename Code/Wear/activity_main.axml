@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.wear.widget.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/box_inset_layout_padding"
+    tools:deviceIds="wear">
+	<!-- android:layout_height="fill_parent"     Заполняем на весь экран -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:padding="@dimen/inner_frame_layout_padding"
+        app:boxedEdges="all">
+		<!-- android:textSize="36sp"             Размер шрифта -->
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textSize="36sp"
+			android:text="Yakutsk" />
+		<!-- android:id="@+id/text"              По id "text" далее будем менять лейбл -->
+		<!-- android:layout_gravity="bottom"     Прикрепить textView к низу -->
+		<TextView
+			android:id="@+id/text"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textSize="36sp"
+            android:layout_gravity="bottom"
+			android:text="0" />
+    </FrameLayout>
+</android.support.wear.widget.BoxInsetLayout>
