@@ -6,7 +6,7 @@
 
 ## .xaml
 
-```xaml
+```xml
 <AbsoluteLayout Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
     <StackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
         <!-- Тут элементы основного окна -->
