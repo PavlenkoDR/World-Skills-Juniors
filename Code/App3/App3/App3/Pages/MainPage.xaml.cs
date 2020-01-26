@@ -39,7 +39,7 @@ namespace App3
 
         public void OpenNews()
         {
-            var newPage = new Master();
+            var newPage = new NavigationPage(new News());
             Navigation.PushModalAsync(newPage);
 
             //newPage.BarBackgroundColor = Color.FromHex("#030c1c");
